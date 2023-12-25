@@ -1,9 +1,10 @@
+import AppRouter from "./AppRouter";
 import "./app.css";
 
 function App() {
   return (
     <>
-      <h2>Pokemon</h2>
+      <AppRouter />
     </>
   );
 }
