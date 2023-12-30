@@ -1,19 +1,13 @@
-import { useContext } from "react"
-import { Outlet } from "react-router-dom"
-import { PokemonContext } from "../context/PokemonContext"
-
+import { Outlet } from "react-router-dom";
 
 const Navigation = () => {
-
-  const {name} = useContext(PokemonContext)
-  console.log(name)
-
   return (
     <div>
-        <h1>Navigation</h1>
-        <Outlet />
-    </div>
-  )
-}
+      <h1>Navigation</h1>
 
-export default Navigation
+      <Outlet />
+    </div>
+  );
+};
+
+export default Navigation;

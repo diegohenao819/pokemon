@@ -1,0 +1,103 @@
+.CardPokemon {
+  width: 200px;
+  height: 330px;
+
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h3 {
+  color: black;
+  font-weight: bold;
+}
+
+.imagen {
+  background-color: rgba(207, 203, 203, 0.43);
+}
+
+img {
+  width: 200px;
+  height: 200px;
+}
+
+.card-information {
+  width: 90%;
+  height: 80%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.boton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.boton span {
+
+  width: 105px;
+  padding: 7px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.grass {
+  background-color: #00ff00a0;
+}
+
+.poison {
+  background-color: #b300ff9e;
+}
+
+.fire {
+  background-color: #ff0000a0;
+  color: white;
+}
+
+.flying {
+  background-color: #00ffffa0;
+}
+
+.water {
+  background-color: #0000ffa0;
+  color: white;
+}
+
+.bug{  
+    background-color: #f47d239e;
+}
+
+.normal{
+    background-color: #a3a3a39e;
+}
+
+.electric{
+    background-color: #ffff009e;
+}
+
+.ground{
+    background-color: #b3b3009e;
+}
+
+.fairy{
+    background-color: #ff00ff9e;
+}
