@@ -4,9 +4,13 @@ import { useEffect, useState } from "react";
 import { useForm } from "../hook/useForm";
 
 const PokemonProvider = ({ children }) => {
+
+  console.log("PokemonProvider rendered");
+
   const [allPokemons, setAllPokemons] = useState([]);
   const [globalPokemons, setGlobalPokemons] = useState([]);
   const [offset, setOffset] = useState(0);
+  const [rerender, setRerender] = useState(false)
 
 
   // Usar custom Hooks useForm
@@ -43,24 +47,31 @@ const PokemonProvider = ({ children }) => {
   };
 
   // Call all the pokemons from the API
-    const getGlobalPokemons = async () => {
+  const getGlobalPokemons = async () => {
+    try {
         const baseUrl = "https://pokeapi.co/api/v2/";
 
-        const res = await fetch(`${baseUrl}pokemon?limit=1000&offset=0`);
+    
+        const res = await fetch(`${baseUrl}pokemon?limit=100000&offset=0`);
         const data = await res.json();
 
-        console.log(data)
+        // Fetch detailed data for each Pokemon
+        const resultados = await Promise.all(data.results.map(async (pokemon) => {
+            const res = await fetch(pokemon.url);
+            return res.json();
+        }));
 
+        // Update global state
+        setGlobalPokemons(resultados);
 
-        const resultados = data.results.map(async (pokemon)=>{
-                const res = await fetch(pokemon.url)
-                const data = await res.json()
-        })
-        const final = await Promise.all(resultados)
-        setGlobalPokemons(final)
-        console.log(globalPokemons)
-        setLoading(false)
+        // Additional logic (if any)
+        setLoading(false);
+    } catch (error) {
+        console.error("Failed to fetch Pokémon data:", error);
+        // Handle the error appropriately
     }
+};
+
 
 
 // Call Pokemons by Id
@@ -75,14 +86,30 @@ const getPokemonById = async (id) => {
 
 
   useEffect(() => {
+    console.log("All Pokemons useEffect");
     getAllPokemons();
-  },[offset]);
+
+  }, [offset]);
+
+
+  useEffect(() => {
+    console.log("Global Pokemons");
+  
+    getGlobalPokemons()
+  }, []);
+
+
+  const loadMore = () => {
+
+    console.log("onClickLoadMore");
+    setOffset(offset + 50);
+   
+  }
 
 
 
-  // useEffect(() =>{
-  //   getGlobalPokemons()
-  // }, [])
+
+  
 
 
   return (
@@ -93,7 +120,12 @@ const getPokemonById = async (id) => {
         onResetForm,
         allPokemons,
         globalPokemons,
-        getPokemonById
+        getPokemonById,
+        loading,
+        active,
+        setActive,
+        setLoading,
+        loadMore,
       }}
     >
       {children}

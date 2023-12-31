@@ -16,7 +16,7 @@ const Loader = () => {
     stroke-length="0.28"
     bg-opacity="0.1"
     speed="0.9"
-    color="black" 
+    color="yellow" 
   ></l-square>
 </div>
   )
