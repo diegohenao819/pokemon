@@ -107,11 +107,56 @@ const getPokemonById = async (id) => {
   }
 
 
+  const [typeSelected, setTypeSelected] = useState({
+    grass: false,
+    poison: false,
+    fire: false,
+    flying: false,
+    water: false,
+    bug: false,
+    normal: false,
+    electric: false,
+    ground: false,
+    fairy: false,
+    fighting: false,
+    psychic: false,
+    rock: false,
+    steel: false,
+    ice: false,
+    ghost: false,
+    dragon: false,
+    dark: false,
+    shadow: false,
+    unknown: false,
+  })
+
+  const [filteredPokemons, setFilteredPokemons] = useState([])
 
 
-  
+  const handleCheckBox = e => {
+    setTypeSelected({
+      ...typeSelected,
+      [e.target.name]: e.target.checked,
+    });
 
+  if (e.target.checked) {
+    const filteredResults = globalPokemons.filter(pokemon => 
+      pokemon.types
+        .map(type => type.type.name)
+        .includes(e.target.name)
+    );
+    setFilteredPokemons([...filteredPokemons, ...filteredResults])
+   
+  }else{
+    const filteredResults = filteredPokemons.filter(pokemon => 
+     !pokemon.types
+        .map(type => type.type.name)
+        .includes(e.target.name)
+    );
+    setFilteredPokemons([ ...filteredResults])
+  }
 
+  };
   return (
     <PokemonContext.Provider
       value={{
@@ -126,6 +171,8 @@ const getPokemonById = async (id) => {
         setActive,
         setLoading,
         loadMore,
+        handleCheckBox,
+        filteredPokemons
       }}
     >
       {children}
