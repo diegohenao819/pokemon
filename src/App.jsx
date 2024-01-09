@@ -9,9 +9,7 @@ function App() {
     <>
       <PokemonProvider>
  
-      <Link to={"/"}>
-          <button>Home</button>
-        </Link>
+      
         <AppRouter />
       </PokemonProvider>
     </>

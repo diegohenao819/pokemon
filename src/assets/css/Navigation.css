@@ -1,0 +1,119 @@
+
+.encabezado{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    background-color: #f8b1557e;
+    border-bottom: 1px solid #fd9103;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+
+.encabezado button{
+    width: 100%;
+    height: 80%;
+   
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.pokemonList{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #fd9103;
+   
+    width: 100%;
+}
+
+.navigation form{
+    background-color:#f8b1557e;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+ 
+   
+    justify-items: center;
+    align-items: center;
+  
+    gap: 10px;
+
+}
+
+
+.navigation form input{
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #fd9103;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.navigation form button{
+    width: 10%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.navigation form button:hover{
+    background-color: #fd9103;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+
+@media (width < 500px){
+
+    .encabezado{
+        font-size: small;
+        margin-bottom: 15px;
+        
+    }
+
+    .encabezado h3{
+        font-size: small;
+    
+    }
+
+.form{
+    width: 100%;
+
+}
+
+    .navigation form input{
+        width:60%;
+        font-size: small;
+    }   
+    .navigation form button{
+        width: 24%;
+        font-size: small;
+    }
+
+}

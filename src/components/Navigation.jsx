@@ -1,6 +1,8 @@
 import { useContext } from "react";
+import { HashLink } from 'react-router-hash-link';
 import {Link, Outlet, useNavigate } from "react-router-dom";
 import { PokemonContext } from "../context/PokemonContext";
+import "../assets/css/Navigation.css";
 
 const Navigation = () => {
   const { onInputChange, valueSearch, onResetForm } = useContext(PokemonContext);
@@ -17,9 +19,13 @@ const Navigation = () => {
   }
 
   return (
-    <div>
-      <h1>Navigation</h1>
-
+    <div className="navigation">
+ <div className="encabezado" id="search">
+       <HashLink smooth to='/#top'>
+           <button>Home</button>
+         </HashLink>
+     <h3 className="pokemonList">POKEMON LIST</h3>
+ </div>
       <form onSubmit={onSearchSubmit}>
         <input
           type="search"

@@ -31,14 +31,17 @@ const SearchPage = () => {
          <Loader />
        </>
       ) : (
-        <div>
-           <p>
-           Se encontraron <span>{filteredPokemons?.length} resultados: </span>
-         </p> 
-          {filteredPokemons.map((pokemon) => (
-            <CardPokemon pokemon={pokemon} key={pokemon.id} />
-          ))}
-        </div>
+    <>
+       <p>
+             Se encontraron <span>{filteredPokemons?.length} resultados: </span>
+           </p> 
+          <div className="PokemonList">
+          
+            {filteredPokemons.map((pokemon) => (
+              <CardPokemon pokemon={pokemon} key={pokemon.id} />
+            ))}
+          </div>
+    </>
       )}
     </div>
   );

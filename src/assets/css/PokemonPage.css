@@ -189,3 +189,122 @@ h1 {
   background: rgb(14, 255, 1);
 }
 
+
+
+
+
+@media (width < 500px){
+    .PokemonPageContainer{
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .container-info-pokemon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .group-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .container-info-pokemon{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+
+    
+        border-radius: 10px;
+    }
+
+    .type{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .type span{
+        width: 40%;
+        height: 40%;
+        font-size: small;
+        padding: 0px;
+        gap: 0px;
+    }
+
+    .stat-group{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .container-stats{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+    .container-stats .stats{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: #e9e8eb5c;
+        padding: 1rem;
+        margin: 1rem;
+        border-radius: 10px;
+    }
+
+
+    .counter-stat{
+        background: rgb(14, 255, 1);
+    }
+}
